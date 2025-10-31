@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    New Post
+{% endblock %}
+
+{% block content %}
+<section>
+   <h1>New Post</h1>
+   <form class="form-with-validation" action="{% url 'posts:new_post' %}", method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form }}
+    <button class="form-submit">Add Post</button>
+   </form>
+</section>
+{% endblock %}    
+<!-- <!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posts List</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <h1>Posts List</h1>
+</body>
+</html> -->
